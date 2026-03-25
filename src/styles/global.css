@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "tailwind-animations";
+
+:root {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  @apply bg-neutral-900 text-neutral-500;
+}

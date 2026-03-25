@@ -1,0 +1,13 @@
+---
+interface Props {
+  years: number;
+  description: string;
+}
+
+const { years, description } = Astro.props;
+---
+
+<div role="contentinfo">
+  <h1 class="text-white font-semibold text-7xl">+{years}</h1>
+  <p class="max-w-30 leading-tight uppercase">{description}</p>
+</div>
