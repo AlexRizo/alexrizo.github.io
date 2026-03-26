@@ -1,10 +1,11 @@
 ---
-
+import {} from "@lucide/astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <div
   role="complementary"
-  class="w-86 h-172 bg-white rounded-lg sticky top-0 left-0 p-10 flex flex-col items-center"
+  class="w-86 h-max bg-white rounded-lg sticky top-0 left-0 p-10 flex flex-col items-center"
 >
   <picture>
     <img
@@ -16,9 +17,14 @@
 
   <article class="text-center mt-5">
     <h1 class="text-3xl font-bold text-black">Alex Rizo</h1>
-    <p class="font-medium leading-tight mt-auto">
+    <p class="font-medium leading-tight mt-16">
       Desarrollador Web Full-Stack enfocado en crear soluciones innovadoras y
       escalables.
     </p>
   </article>
+  <footer>
+    <a href="#" class="">
+      <Icon name="github" />
+    </a>
+  </footer>
 </div>
