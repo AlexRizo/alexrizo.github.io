@@ -1,6 +1,6 @@
 ---
-import {} from "@lucide/astro";
 import { Icon } from "astro-icon/components";
+import ButtonLink from "./ButtonLink.astro";
 ---
 
 <div
@@ -17,14 +17,20 @@ import { Icon } from "astro-icon/components";
 
   <article class="text-center mt-5">
     <h1 class="text-3xl font-bold text-black">Alex Rizo</h1>
-    <p class="font-medium leading-tight mt-16">
-      Desarrollador Web Full-Stack enfocado en crear soluciones innovadoras y
-      escalables.
+    <p class="text-lg font-medium leading-tight mt-16">
+      Desarrollador Web<br /> Full-Stack enfocado en crear soluciones innovadoras
+      y escalables.
     </p>
   </article>
-  <footer>
-    <a href="#" class="">
-      <Icon name="github" />
-    </a>
+  <footer class="flex gap-6 mt-10">
+    <ButtonLink href="https://github.com/AlexRizo">
+      <Icon name="github" size={22} class="text-orange-500" />
+    </ButtonLink>
+    <ButtonLink href="https://linkedin.com/in/dev-alex-rizo">
+      <Icon name="linkedin" size={22} class="text-orange-500" />
+    </ButtonLink>
+    <ButtonLink href="#">
+      <Icon name="instagram" size={22} class="text-orange-500" />
+    </ButtonLink>
   </footer>
 </div>
