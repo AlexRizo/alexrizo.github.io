@@ -25,7 +25,9 @@ import "@/styles/global.css";
       class="container mx-auto relative flex flex-row justify-center gap-20"
     >
       <ProfileCard />
-      <slot />
+      <div role="main" class="w-max space-y-32">
+        <slot />
+      </div>
     </main>
   </body>
 </html>
