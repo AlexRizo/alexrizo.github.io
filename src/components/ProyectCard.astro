@@ -11,15 +11,23 @@ interface Props {
 const { title, description, image, url } = Astro.props;
 ---
 
-<div role="group" class="bg-neutral-800 rounded-xl p-5 flex flex-row">
-  <picture>
-    <img src={image} alt={title} />
-  </picture>
-  <article>
-    <h1 class="text-white text-xl font-medium">{title}</h1>
-    <p>{description}</p>
-  </article>
-  <a href={url} target="_blank" rel="noopener noreferrer" class="self-end">
-    <ExternalLink class="text-orange-500" />
+<div
+  role="group"
+  class="hover:bg-white/3 transition-colors duration-300 rounded-xl p-5"
+>
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex flex-row gap-5"
+  >
+    <picture class="my-auto">
+      <img src={image} alt={title} class="max-w-40 rounded" />
+    </picture>
+    <article class="max-w-90">
+      <h1 class="text-white text-3xl font-semibold">{title}</h1>
+      <p>{description}</p>
+    </article>
+    <ExternalLink class="text-orange-500 ml-auto" />
   </a>
 </div>
