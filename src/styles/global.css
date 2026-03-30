@@ -8,3 +8,9 @@
 body {
   @apply bg-neutral-900 text-neutral-500;
 }
+
+@layer utilities {
+  .animate-move-up-right {
+    @apply translate-y-2.5 translate-x-2.5 transition-all duration-1000 ease-in-out;
+  }
+}

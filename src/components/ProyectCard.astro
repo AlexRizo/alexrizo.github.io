@@ -1,5 +1,5 @@
 ---
-import { ExternalLink } from "@lucide/astro";
+import { MoveUpRight } from "@lucide/astro";
 
 interface Props {
   title: string;
@@ -13,7 +13,7 @@ const { title, description, image, url } = Astro.props;
 
 <div
   role="group"
-  class="hover:bg-white/3 transition-colors duration-300 rounded-xl p-5"
+  class="group hover:bg-white/3 transition-colors duration-300 rounded-xl p-5"
 >
   <a
     href={url}
@@ -28,6 +28,9 @@ const { title, description, image, url } = Astro.props;
       <h1 class="text-white text-3xl font-semibold">{title}</h1>
       <p>{description}</p>
     </article>
-    <ExternalLink class="text-orange-500 ml-auto" />
+    <MoveUpRight
+      size={20}
+      class="text-orange-500 ml-auto mt-2 mr-2 group-hover:transform-[translate(10px,-10px)] transition-transform duration-300 ease-in-out"
+    />
   </a>
 </div>
