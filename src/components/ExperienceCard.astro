@@ -1,0 +1,38 @@
+---
+import { MoveUpRight } from "@lucide/astro";
+
+interface Props {
+  title: string;
+  description: string;
+  date: string;
+  url?: string;
+}
+
+const { title, description, date, url } = Astro.props;
+---
+
+<div
+  role="group"
+  class="group hover:bg-white/3 transition-colors duration-300 rounded-xl p-5"
+>
+  <a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex flex-row gap-5"
+  >
+    <article class="max-w-lg">
+      <h1 class="text-white text-3xl font-semibold">{title}</h1>
+      <p class="mt-1">{description}</p>
+      <p class="mt-2">{date}</p>
+    </article>
+    {
+      url && (
+        <MoveUpRight
+          size={20}
+          class="text-orange-500 ml-auto mt-2 mr-2 group-hover:transform-[translate(10px,-10px)] transition-transform duration-300 ease-in-out"
+        />
+      )
+    }
+  </a>
+</div>
