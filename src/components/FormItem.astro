@@ -1,0 +1,17 @@
+---
+interface Props {
+  label: string;
+  id: string;
+}
+
+const { label, id } = Astro.props as Props;
+---
+
+<div class="flex flex-col gap-2">
+  <label class="text-xs font-medium" for={id}>{label}</label>
+  <div
+    class="*:w-full *:rounded-md *:border-none *:bg-white/10 *:p-2.5 *:outline-none *:focus:ring-2 *:focus:ring-orange-500 *:transition-all *:placeholder:text-neutral-500 *:text-white *:text-sm"
+  >
+    <slot />
+  </div>
+</div>

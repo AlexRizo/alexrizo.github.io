@@ -1,0 +1,62 @@
+---
+import FormItem from "@/components/FormItem.astro";
+import Title from "@/components/Title.astro";
+---
+
+<section>
+  <Title>
+    <span>Trabajemos</span><br />
+    Juntos
+  </Title>
+  <div>
+    <p class="mt-10 max-w-xl">
+      Si tienes una idea en mente, un proyecto en mente, quieres que me una a tu
+      equipo o simplemente quieres charlar sobre tecnología, no dudes en
+      contactarme. Estoy seguro de que podemos crear algo increíble juntos.
+    </p>
+    <form class="mt-10 flex flex-col gap-6">
+      <div class="grid grid-cols-2 gap-6">
+        <FormItem label="Nombre" id="name">
+          <input
+            type="text"
+            placeholder="Tu nombre completo"
+            id="name"
+            required
+          />
+        </FormItem>
+        <FormItem label="Email" id="email">
+          <input
+            type="email"
+            placeholder="Tu correo electrónico"
+            id="email"
+            required
+          />
+        </FormItem>
+      </div>
+      <FormItem label="Presupuesto" id="budget">
+        <select
+          name="budget"
+          id="budget"
+          required
+          class="[&>option]:text-black text-neutral-500 invalid:text-neutral-500"
+        >
+          <option value="" selected disabled
+            >Selecciona un presupuesto...</option
+          >
+          <option value="na">N/A</option>
+          <option value="less_100">Menos de $100 USD</option>
+          <option value="100_500">Entre $100 y $500 USD</option>
+          <option value="more_500">Más de $500 USD</option>
+        </select>
+      </FormItem>
+      <FormItem label="Mensaje" id="message">
+        <textarea placeholder="Tu mensaje" id="message" required rows={5}
+        ></textarea>
+      </FormItem>
+      <button
+        class="w-full rounded-md bg-orange-500 p-2.5 text-white transition-all hover:bg-orange-600 font-medium text-sm cursor-pointer"
+        type="submit">Enviar</button
+      >
+    </form>
+  </div>
+</section>
