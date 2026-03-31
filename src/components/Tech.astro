@@ -7,8 +7,11 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<div role="contentinfo" class="flex items-center gap-2">
-  <div class="p-4 bg-white rounded-xl">
+<div
+  role="contentinfo"
+  class="flex items-center gap-2 hover:bg-white/3 transition-colors duration-300 rounded-xl p-4 cursor-pointer"
+>
+  <div class="size-15 flex items-center justify-center bg-white rounded-xl">
     <slot />
   </div>
   <div role="definition">
