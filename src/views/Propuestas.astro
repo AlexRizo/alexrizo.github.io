@@ -14,13 +14,20 @@ import Title from "@/components/Title.astro";
       equipo o simplemente quieres charlar sobre tecnología, no dudes en
       contactarme. Estoy seguro de que podemos crear algo increíble juntos.
     </p>
-    <form class="mt-10 flex flex-col gap-6">
+    <form
+      class="mt-10 flex flex-col gap-6"
+      id="contact-form"
+      name="contact"
+      method="POST"
+      action="https://formsubmit.co/alexrizo_dev@outlook.com"
+    >
       <div class="grid grid-cols-2 gap-6">
         <FormItem label="Nombre" id="name">
           <input
             type="text"
             placeholder="Tu nombre completo"
             id="name"
+            name="name"
             required
           />
         </FormItem>
@@ -29,6 +36,7 @@ import Title from "@/components/Title.astro";
             type="email"
             placeholder="Tu correo electrónico"
             id="email"
+            name="email"
             required
           />
         </FormItem>
@@ -50,9 +58,15 @@ import Title from "@/components/Title.astro";
         </select>
       </FormItem>
       <FormItem label="Mensaje" id="message">
-        <textarea placeholder="Tu mensaje" id="message" required rows={5}
-        ></textarea>
+        <textarea
+          placeholder="Tu mensaje"
+          id="message"
+          name="message"
+          required
+          rows={5}></textarea>
       </FormItem>
+      <input type="hidden" name="_captcha" value="true" />
+      <input type="hidden" name="_next" value="http://localhost:4321/gracias" />
       <button
         class="w-full rounded-md bg-orange-500 p-2.5 text-white transition-all hover:bg-orange-600 font-medium text-sm cursor-pointer"
         type="submit">Enviar</button
