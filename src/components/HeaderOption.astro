@@ -1,0 +1,19 @@
+---
+import type { AstroComponent } from "@lucide/astro";
+
+interface Props {
+  link: string;
+  label: string;
+  icon: AstroComponent;
+}
+
+const { link, label, icon: Icon } = Astro.props;
+---
+
+<button class="relative flex items-center justify-center cursor-pointer group">
+  <a href={link}><Icon size={20} /></a>
+  <small
+    class="absolute top-2 py-0.5 px-1 bg-neutral-800 opacity-0 rounded-md transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-7.5"
+    >{label}</small
+  >
+</button>

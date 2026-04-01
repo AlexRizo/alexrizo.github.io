@@ -1,13 +1,14 @@
 ---
 import { House, Folder, Briefcase, Wrench, Mail } from "@lucide/astro";
+import HeaderOption from "./HeaderOption.astro";
 ---
 
 <header class="w-full flex justify-center mt-8 mb-22">
   <nav class="bg-white/3 rounded-2xl px-7 py-3.5 flex gap-8.5 text-white">
-    <House size={20} />
-    <Folder size={20} />
-    <Briefcase size={20} />
-    <Wrench size={20} />
-    <Mail size={20} />
+    <HeaderOption link="#" label="Inicio" icon={House} />
+    <HeaderOption link="#" label="Proyectos" icon={Folder} />
+    <HeaderOption link="#" label="Experiencia" icon={Briefcase} />
+    <HeaderOption link="#" label="Tecnologías" icon={Wrench} />
+    <HeaderOption link="#" label="Contacto" icon={Mail} />
   </nav>
 </header>
