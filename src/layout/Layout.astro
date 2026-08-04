@@ -37,10 +37,10 @@ import "@/styles/global.css";
   <body transition:name="slide">
     <Header />
     <main
-      class="container mx-auto relative flex flex-row justify-center gap-20"
+      class="container mx-auto relative flex flex-col lg:flex-row justify-center gap-20"
     >
       <ProfileCard />
-      <div role="main" class="min-w-[681px] w-max space-y-30">
+      <div role="main" class="lg:min-w-[681px] w-max space-y-30">
         <slot />
       </div>
     </main>
