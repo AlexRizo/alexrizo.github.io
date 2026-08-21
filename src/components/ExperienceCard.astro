@@ -22,15 +22,15 @@ const { title, description, date, url } = Astro.props;
     class="flex flex-row gap-5"
   >
     <article class="max-w-lg">
-      <h1 class="text-white text-3xl font-semibold">{title}</h1>
+      <h1 class="text-white lg:text-2xl xl:text-3xl font-semibold">{title}</h1>
       <p class="mt-1">{description}</p>
-      <p class="mt-2">{date}</p>
+      <p class="mt-2 text-sm">- {date}</p>
     </article>
     {
       url && (
         <MoveUpRight
           size={20}
-          class="text-orange-500 ml-auto mt-2 mr-2 group-hover:transform-[translate(10px,-10px)] transition-transform duration-300 ease-in-out"
+          class="text-orange-500 ml-auto mt-2 mr-2 group-hover:transform-[translate(10px,-10px)] transition-transform duration-300 ease-in-out min-w-5"
         />
       )
     }

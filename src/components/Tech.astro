@@ -11,11 +11,11 @@ const { title, description } = Astro.props;
   role="contentinfo"
   class="flex items-center gap-2 hover:bg-white/3 transition-colors duration-300 rounded-xl p-4 cursor-pointer"
 >
-  <div class="size-15 flex items-center justify-center bg-white rounded-xl">
+  <div class="size-15 flex items-center justify-center bg-white rounded-lg">
     <slot />
   </div>
   <div role="definition">
-    <h1 class="text-white text-2xl font-semibold">{title}</h1>
-    <p>{description}</p>
+    <h1 class="text-white lg:text-xl xl:text-2xl font-semibold">{title}</h1>
+    <p class="text-sm xl:text-base">{description}</p>
   </div>
 </div>
