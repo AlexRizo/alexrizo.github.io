@@ -13,20 +13,22 @@ const { title, description, image, url } = Astro.props;
 
 <div
   role="group"
-  class="group hover:bg-white/3 transition-colors duration-300 rounded-xl p-5"
+  class="group hover:bg-white/3 transition-colors duration-300 rounded-xl p-5 border border-neutral-800 lg:border-0"
 >
   <a
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    class="flex flex-row gap-5"
+    class="flex flex-row gap-4 lg:gap-5"
   >
     <picture class="my-auto w-40">
       <img src={image} alt={title} class="size-full rounded" />
     </picture>
     <article class="w-full">
-      <h1 class="text-white lg:text-2xl xl:text-3xl font-semibold">{title}</h1>
-      <p>{description}</p>
+      <h1 class="text-white text-xl lg:text-2xl xl:text-3xl font-semibold">
+        {title}
+      </h1>
+      <p class="text-sm lg:text-base">{description}</p>
     </article>
     <MoveUpRight
       size={20}
