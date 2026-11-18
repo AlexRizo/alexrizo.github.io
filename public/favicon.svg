@@ -1,9 +1,125 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-    <path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-    <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
-    </style>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="887"
+   version="1.1"
+   viewBox="0 0 1774 887"
+   width="1774"
+   id="svg5"
+   sodipodi:docname="favicon.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showguides="false"
+     inkscape:zoom="0.45120906"
+     inkscape:cx="142.94926"
+     inkscape:cy="1454.9796"
+     inkscape:window-width="2536"
+     inkscape:window-height="1390"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g12" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect12"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,171.5261,0,1 @ F,0,0,1,0,171.5261,0,1 @ F,0,0,1,0,171.5261,0,1 @ F,0,0,1,0,171.5261,0,1"
+       radius="200"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <linearGradient
+       id="swatch12"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop12" />
+    </linearGradient>
+  </defs>
+  <polygon
+     fill="#FFFFFF"
+     points="579,466 579,565 713,565 887,753 934,754 929,747 826,638 820,630 732,537 733,536 732,537 665,465"
+     id="polygon1" />
+  <polygon
+     fill="#FFFFFF"
+     points="483,149 604,274 1022,274 1037,277 1048,281 1071,295 1084,310 1093,326 1098,347 1097,370 1093,384 1082,403 1069,417 1049,430 1036,435 1013,439 752,440 795,486 794,487 795,486 904,601 906,604 905,605 920,618 924,623 923,624 924,623 1046,754 1211,753 1018,551 1053,549 1078,545 1107,536 1133,524 1159,507 1189,479 1205,458 1220,431 1230,404 1236,378 1238,362 1238,330 1234,302 1225,272 1210,241 1190,214 1172,196 1147,178 1122,165 1085,153 1047,148"
+     id="polygon2" />
+  <polygon
+     fill="#FF7A00"
+     points="579,567 579,619 692,734 710,754 885,753 713,567"
+     id="polygon3" />
+  <polygon
+     fill="#FF7A00"
+     points="1327,283 1282,328 1282,330 1409,453 1408,454 1410,454 1281,580 1319,618 1328,625 1499,460 1500,450 1497,445 1406,357"
+     id="polygon4" />
+  <polygon
+     fill="#FF7A00"
+     points="447,283 438,290 275,447 273,451 275,461 445,625 447,625 492,581 492,579 364,455 364,453 493,329"
+     id="polygon5" />
+  <g
+     id="g6"
+     transform="matrix(0.8576305,0,0,0.8576305,120.37879,171.08138)">
+    <g
+       id="g12"
+       transform="translate(-514.25088,405.71552)"
+       inkscape:export-filename="g12.png"
+       inkscape:export-xdpi="6.4747491"
+       inkscape:export-ydpi="6.4747491">
+      <path
+         style="fill:#000000;fill-opacity:1;fill-rule:nonzero"
+         id="rect6"
+         width="741.34149"
+         height="741.34149"
+         x="403.36069"
+         y="-1774.1222"
+         transform="matrix(1.1660033,0,0,-1.1660033,-140.36207,-199.48146)"
+         inkscape:path-effect="#path-effect12"
+         sodipodi:type="rect"
+         d="m 574.88679,-1774.1222 h 398.28929 a 171.5261,171.5261 45 0 1 171.52612,171.5261 v 398.2893 a 171.5261,171.5261 135 0 1 -171.52612,171.5261 H 574.88679 a 171.5261,171.5261 45 0 1 -171.5261,-171.5261 v -398.2893 a 171.5261,171.5261 135 0 1 171.5261,-171.5261 z"
+         inkscape:export-filename="rect6.png"
+         inkscape:export-xdpi="6.4747491"
+         inkscape:export-ydpi="6.4747491" />
+      <g
+         id="g13"
+         transform="matrix(0.87898756,0,0,0.87898756,93.753198,167.93254)">
+        <polygon
+           fill="#ffffff"
+           points="826,638 820,630 732,537 733,536 732,537 665,465 579,466 579,565 713,565 887,753 934,754 929,747 "
+           id="polygon1-7"
+           transform="translate(-96.689046,1000.3004)" />
+        <polygon
+           fill="#ff7a00"
+           points="579,567 579,619 692,734 710,754 885,753 713,567 "
+           id="polygon3-3"
+           transform="translate(-96.689046,1000.3004)" />
+        <polygon
+           fill="#ffffff"
+           points="794,487 795,486 904,601 906,604 905,605 920,618 924,623 923,624 924,623 1046,754 1211,753 1018,551 1053,549 1078,545 1107,536 1133,524 1159,507 1189,479 1205,458 1220,431 1230,404 1236,378 1238,362 1238,330 1234,302 1225,272 1210,241 1190,214 1172,196 1147,178 1122,165 1085,153 1047,148 483,149 604,274 1022,274 1037,277 1048,281 1071,295 1084,310 1093,326 1098,347 1097,370 1093,384 1082,403 1069,417 1049,430 1036,435 1013,439 752,440 795,486 "
+           id="polygon2-5"
+           transform="translate(-96.689046,1000.3004)" />
+      </g>
+    </g>
+  </g>
 </svg>
