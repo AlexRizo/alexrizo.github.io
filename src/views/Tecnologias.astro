@@ -1,78 +1,90 @@
 ---
 import Title from "@/components/Title.astro";
 import Tech from "@/components/Tech.astro";
+import TechChip from "@/components/TechChip.astro";
+import { ChevronDown } from "@lucide/astro";
 import { Icon } from "astro-icon/components";
 
-const CATEGORIES = [
-  {
-    name: "Frontend",
-    techs: [
-      { title: "TypeScript", description: "Lenguaje de programación", icon: "typescript", color: "text-blue-600" },
-      { title: "JavaScript", description: "Lenguaje de programación", icon: "javascript", color: "text-yellow-400" },
-      { title: "ReactJS", description: "Librería de UI", icon: "react", color: "text-cyan-500" },
-      { title: "Next.js", description: "Framework de React", icon: "nextdotjs", color: "text-black" },
-      { title: "Astro", description: "Framework frontend", icon: "astro", color: "text-orange-500" },
-      { title: "Tanstack", description: "Librerías de React", icon: "tanstack", color: "text-black" },
-      { title: "Tailwind", description: "Framework CSS", icon: "tailwindcss", color: "text-cyan-500" },
-      { title: "GSAP", description: "Animaciones", icon: "gsap", color: "text-green-500" },
-    ],
-  },
+// Lo que más uso en el día a día
+const MAIN_STACK = [
+  { title: "TypeScript", description: "Lenguaje de programación", icon: "typescript", color: "text-blue-600" },
+  { title: "ReactJS", description: "Librería de UI", icon: "react", color: "text-cyan-500" },
+  { title: "Tanstack", description: "Router, Query y Table", icon: "tanstack", color: "text-black" },
+  { title: "Astro", description: "Framework frontend", icon: "astro", color: "text-orange-500" },
+  { title: "Tailwind", description: "Framework CSS", icon: "tailwindcss", color: "text-cyan-500" },
+  { title: "NodeJS", description: "Entorno de ejecución", icon: "nodedotjs", color: "text-green-500" },
+  { title: "NestJS", description: "Framework backend", icon: "nestjs", color: "text-red-500" },
+  { title: "PostgreSQL", description: "Base de datos", icon: "postgresql", color: "text-blue-500" },
+];
+
+// Todo lo demás, en formato compacto
+const MORE = [
+  { name: "Frontend", techs: ["JavaScript", "Next.js", "Redux", "GSAP", "Vite"] },
   {
     name: "Backend y bases de datos",
-    techs: [
-      { title: "NodeJS", description: "Entorno de ejecución", icon: "nodedotjs", color: "text-green-500" },
-      { title: "NestJS", description: "Framework backend", icon: "nestjs", color: "text-red-500" },
-      { title: "Express", description: "Framework backend", icon: "express", color: "text-black" },
-      { title: "Prisma", description: "ORM", icon: "prisma", color: "text-black" },
-      { title: "PostgreSQL", description: "Base de datos", icon: "postgresql", color: "text-blue-500" },
-      { title: "MySQL", description: "Base de datos", icon: "mysql", color: "text-blue-700" },
-      { title: "MongoDB", description: "Base de datos", icon: "mongodb", color: "text-green-600" },
-      { title: "Turso", description: "Base de datos", icon: "turso", color: "text-teal-400" },
-    ],
+    techs: ["Express", "Socket.io", "Prisma", "Drizzle", "MySQL", "MongoDB", "Turso"],
+  },
+  { name: "CMS y e-commerce", techs: ["WordPress", "Elementor", "Shopify", "Strapi"] },
+  {
+    name: "DevOps y nube",
+    techs: ["Docker", "AWS S3", "Railway", "DigitalOcean", "Netlify", "GitHub"],
   },
   {
-    name: "CMS y e-commerce",
-    techs: [
-      { title: "WordPress", description: "CMS", icon: "wordpress", color: "text-blue-500" },
-      { title: "Elementor", description: "Constructor web", icon: "elementor", color: "text-rose-700" },
-      { title: "Shopify", description: "E-commerce", icon: "shopify", color: "text-lime-500" },
-      { title: "Strapi", description: "Headless CMS", icon: "strapi", color: "text-indigo-700" },
-    ],
-  },
-  {
-    name: "DevOps, automatización y herramientas",
-    techs: [
-      { title: "Docker", description: "Contenedores", icon: "docker", color: "text-blue-500" },
-      { title: "DigitalOcean", description: "Cloud", icon: "digitalocean", color: "text-blue-500" },
-      { title: "Netlify", description: "Hosting y despliegue", icon: "netlify", color: "text-teal-500" },
-      { title: "GitHub", description: "Control de versiones", icon: "github", color: "text-black" },
-      { title: "n8n", description: "Automatización", icon: "n8n", color: "text-rose-500" },
-      { title: "Zapier", description: "Automatización", icon: "zapier", color: "text-orange-600" },
-      { title: "Figma", description: "Diseño y prototipos", icon: "figma", color: "text-orange-600" },
-      { title: "Claude Code", description: "Desarrollo asistido por IA", icon: "claudecode", color: "text-[#d97757]" },
-    ],
+    name: "IA, integraciones y herramientas",
+    techs: ["Claude API", "Claude Code", "Meta API", "n8n", "Zapier", "Figma"],
   },
 ];
+
+const moreCount = MORE.reduce((total, group) => total + group.techs.length, 0);
 ---
 
 <section id="tecnologias">
   <Title><span>Tecnologías</span> <br />Modernas</Title>
-  <div class="space-y-10 mt-5">
+
+  <h2
+    class="text-orange-500 text-xs font-semibold uppercase tracking-wider text-center lg:text-left lg:px-4 mb-2 mt-5"
+  >
+    Mi stack principal
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
     {
-      CATEGORIES.map((category) => (
-        <div>
-          <h2 class="text-orange-500 text-xs font-semibold uppercase tracking-wider text-center lg:text-left lg:px-4 mb-2">
-            {category.name}
-          </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {category.techs.map((tech) => (
-              <Tech title={tech.title} description={tech.description}>
-                <Icon name={tech.icon} size={36} class={tech.color} />
-              </Tech>
-            ))}
-          </div>
-        </div>
+      MAIN_STACK.map((tech) => (
+        <Tech title={tech.title} description={tech.description}>
+          <Icon name={tech.icon} size={36} class={tech.color} />
+        </Tech>
       ))
     }
   </div>
+
+  <details class="group mt-8">
+    <summary
+      class="mx-auto lg:mx-4 w-fit list-none [&::-webkit-details-marker]:hidden cursor-pointer flex items-center gap-2 rounded-md border border-neutral-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-orange-500"
+    >
+      <span class="group-open:hidden">Ver todas las tecnologías</span>
+      <span class="hidden group-open:inline">Ver menos</span>
+      <span class="text-orange-500 group-open:hidden">+{moreCount}</span>
+      <ChevronDown
+        size={16}
+        class="transition-transform duration-300 group-open:rotate-180"
+        aria-hidden="true"
+      />
+    </summary>
+
+    <div class="mt-6 space-y-6 lg:px-4">
+      {
+        MORE.map((group) => (
+          <div>
+            <h3 class="text-neutral-400 text-xs font-semibold uppercase tracking-wider text-center lg:text-left mb-2">
+              {group.name}
+            </h3>
+            <ul class="flex flex-wrap justify-center lg:justify-start gap-1.5">
+              {group.techs.map((tech) => (
+                <TechChip name={tech} />
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </details>
 </section>

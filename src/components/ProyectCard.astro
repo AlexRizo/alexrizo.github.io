@@ -1,15 +1,27 @@
 ---
 import { MoveUpRight } from "@lucide/astro";
+import { cn } from "@/helpers/cn";
+import TechChip from "./TechChip.astro";
 
 interface Props {
   title: string;
   about: string;
   description: string;
-  image: string;
+  stack: string[];
+  image?: string;
   url?: string;
+  featured?: boolean;
 }
 
-const { title, about, description, image, url } = Astro.props;
+const {
+  title,
+  about,
+  description,
+  stack,
+  image,
+  url,
+  featured = false,
+} = Astro.props;
 
 const Wrapper = url ? "a" : "div";
 const linkProps = url
@@ -19,21 +31,64 @@ const linkProps = url
 
 <div
   role="group"
-  class="group hover:bg-white/3 transition-colors duration-300 rounded-xl p-5 border border-neutral-800 lg:border-0"
+  class={cn(
+    "group hover:bg-white/3 transition-colors duration-300 rounded-xl p-5",
+    featured
+      ? "border border-orange-500/30 bg-white/2"
+      : "border border-neutral-800 lg:border-0",
+  )}
 >
-  <Wrapper {...linkProps} class="flex flex-col sm:flex-row gap-4 lg:gap-5">
-    <picture class="shrink-0 w-full sm:w-40">
-      <img
-        src={image}
-        alt={`Sitio web de ${title}`}
-        loading="lazy"
-        decoding="async"
-        class="w-full aspect-video object-cover object-top rounded"
-      />
+  <Wrapper
+    {...linkProps}
+    class={cn(
+      "flex flex-col gap-4 lg:gap-5",
+      !featured && "sm:flex-row",
+    )}
+  >
+    <picture class={cn("shrink-0 w-full", !featured && "sm:w-40")}>
+      {
+        image ? (
+          <img
+            src={image}
+            alt={`Captura de ${title}`}
+            loading={featured ? "eager" : "lazy"}
+            decoding="async"
+            class={cn(
+              "w-full rounded",
+              featured
+                ? "h-auto ring-1 ring-white/10"
+                : "aspect-video object-cover object-top",
+            )}
+          />
+        ) : (
+          <div
+            aria-hidden="true"
+            class="w-full aspect-video rounded bg-linear-to-br from-orange-500/25 via-neutral-800 to-neutral-900 flex items-center justify-center"
+          >
+            <span class="text-white/80 font-bold text-2xl tracking-wider">
+              {title}
+            </span>
+          </div>
+        )
+      }
     </picture>
     <article class="w-full">
+      <!-- {
+        featured && (
+          <span class="inline-block text-xs font-semibold uppercase tracking-wider rounded-md bg-orange-500/10 text-orange-500 px-2 py-0.5 mb-2">
+            Proyecto insignia
+          </span>
+        )
+      } -->
       <div class="flex items-center gap-3 flex-wrap">
-        <h1 class="text-white text-xl lg:text-2xl xl:text-3xl font-semibold">
+        <h1
+          class={cn(
+            "text-white font-semibold",
+            featured
+              ? "text-2xl lg:text-3xl xl:text-4xl"
+              : "text-xl lg:text-2xl xl:text-3xl",
+          )}
+        >
           {title}
         </h1>
         {
@@ -45,10 +100,18 @@ const linkProps = url
         }
       </div>
       <p class="text-sm lg:text-base text-neutral-400">{about}</p>
-      <h2 class="text-orange-500 text-xs font-semibold uppercase tracking-wider mt-4 mb-1">
+      <h2
+        class="text-orange-500 text-xs font-semibold uppercase tracking-wider mt-4 mb-1"
+      >
         Lo que hice
       </h2>
       <p class="text-sm leading-relaxed">{description}</p>
+      <ul
+        class="flex flex-wrap gap-1.5 mt-4"
+        aria-label={`Tecnologías usadas en ${title}`}
+      >
+        {stack.map((tech) => <TechChip name={tech} />)}
+      </ul>
     </article>
     {
       url && (

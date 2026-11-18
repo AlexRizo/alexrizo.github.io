@@ -4,12 +4,44 @@ import Title from "@/components/Title.astro";
 
 const PROJECTS = [
   {
+    title: "Flowee",
+    featured: true,
+    about:
+      "Plataforma para gestionar las solicitudes creativas (diseño, publicaciones, eventos y video) entre una institución educativa y un equipo creativo, desde el pedido hasta la entrega aprobada.",
+    description:
+      "La desarrollé completa, frontend y backend. Incluye tableros kanban con drag & drop, chat y notificaciones en tiempo real, revisiones con flujo de aprobación, calendario de eventos, registro de tiempo y permisos por rol. Integré la API de Claude para redactar guiones de reels y textos de publicación, y la API de Meta para programar publicaciones en Facebook e Instagram, con reintentos y sin duplicados aunque el servidor corra en varias instancias.",
+    image: "/imagenes/proyectos/flowee.webp",
+    stack: [
+      "React",
+      "TanStack",
+      "NestJS",
+      "Prisma",
+      "PostgreSQL",
+      "Socket.io",
+      "Claude API",
+      "Meta API",
+      "AWS S3",
+      "Docker",
+      "Railway",
+    ],
+  },
+  {
+    title: "EXHA",
+    about:
+      "Sistema de examen de admisión en línea de una institución educativa, para aspirantes de secundaria y preparatoria.",
+    description:
+      "Lo desarrollé completo, frontend y backend; es la versión oficial que usa la institución. Los aspirantes se registran con una llave de acceso y presentan el examen en tres bloques (lectura, matemáticas y pensamiento) solo dentro de su ventana de aplicación, y la calificación ocurre únicamente en el servidor. El personal administra aplicaciones, aspirantes y exámenes según su rol, consulta métricas y exporta resultados a PDF y Word.",
+    image: "/imagenes/proyectos/exha.webp",
+    stack: ["JavaScript", "React", "Redux", "Tailwind", "Node.js", "Express", "MongoDB", "Docker"],
+  },
+  {
     title: "Native Home",
     about:
       "Empresa de renta de inmuebles vacacionales en Manzanillo, Colima.",
     description:
-      "Ya tenían un prototipo de diseño y buscaban a alguien que lo hiciera realidad con código. Lo desarrollé de principio a fin y le sumé un panel de administración para que gestionen sus propiedades por su cuenta.",
+      "Ya tenían un prototipo de diseño y buscaban a alguien que lo hiciera realidad con código. Lo desarrollé de principio a fin con Astro y le sumé un panel de administración en Strapi para que gestionen sus propiedades por su cuenta.",
     image: "/imagenes/proyectos/nativehome.webp",
+    stack: ["Astro", "TypeScript", "Strapi", "Tailwind", "Netlify"],
     url: "https://nativehome.com.mx",
   },
   {
@@ -17,8 +49,9 @@ const PROJECTS = [
     about:
       "Agencia de marketing digital enfocada en el desarrollo de soluciones digitales.",
     description:
-      "La agencia necesitaba renovar su sitio web. Su equipo creativo propuso el diseño y yo me encargué de llevarlo a código desde cero.",
+      "La agencia necesitaba renovar su sitio web. Su equipo creativo propuso el diseño y yo me encargué de llevarlo a código desde cero, con animaciones en GSAP.",
     image: "/imagenes/proyectos/alowee.webp",
+    stack: ["Astro", "GSAP", "Tailwind", "Netlify"],
     url: "https://alowee.com",
   },
   {
@@ -28,6 +61,7 @@ const PROJECTS = [
     description:
       "Partí de su prototipo y lo convertí en un sitio real con Astro, cuidando que fuera rápido y que la interfaz se sintiera tan atractiva como el diseño original.",
     image: "/imagenes/proyectos/not-alias.webp",
+    stack: ["Astro", "React", "GSAP", "Tailwind"],
     url: "https://notalias.com",
   },
   {
@@ -36,14 +70,16 @@ const PROJECTS = [
     description:
       "Necesitaban un espacio para dar a conocer sus servicios y proyectos. Construí una interfaz moderna, atractiva y optimizada para SEO.",
     image: "/imagenes/proyectos/meteoro.webp",
+    stack: ["Astro", "React", "Tailwind"],
     url: "https://meteoroventures.com",
   },
   {
     title: "Camina Conmigo",
     about: "La Biblia católica a la luz del Año Litúrgico.",
     description:
-      "Un proyecto que busca acercar al lector a la Palabra de Dios de forma más cercana y reflexiva, centrado en la liturgia del día. Lo construí con Astro e incluye un panel administrativo conectado a Turso.",
+      "Un proyecto que busca acercar al lector a la Palabra de Dios de forma más cercana y reflexiva, centrado en la liturgia del día. Lo construí con Astro e incluye un panel administrativo conectado a Turso con Drizzle.",
     image: "/imagenes/proyectos/camina-conmigo.webp",
+    stack: ["Astro", "React", "Turso", "Drizzle", "Tailwind", "Netlify"],
     url: "https://caminaconmigo.org",
   },
   {
@@ -52,6 +88,7 @@ const PROJECTS = [
     description:
       "Buscaban dar a conocer sus servicios y capacidades. Desarrollé un sitio moderno, rápido y optimizado para SEO.",
     image: "/imagenes/proyectos/ezlabon.webp",
+    stack: ["React", "Vite", "Tailwind"],
     url: "https://ezlabon.mx",
   },
   {
@@ -61,14 +98,8 @@ const PROJECTS = [
     description:
       "Su sitio presenta sus especialidades, los padecimientos que atiende y sus consultorios. Lo desarrollé en WordPress para que él mismo pueda administrar el contenido.",
     image: "/imagenes/proyectos/eric-beas-urologo.webp",
+    stack: ["WordPress", "Elementor"],
     url: "https://eric-beas.urologo-en-colima.com",
-  },
-  {
-    title: "Flowee",
-    about: "SaaS para la gestión diaria de tareas en equipo.",
-    description:
-      "El reto era organizar y agilizar el seguimiento de tareas entre los clientes y el equipo interno. Implementé un sistema de tareas con roles, notificaciones y panel administrativo, con dos interfaces: una para clientes y otra para el equipo.",
-    image: "/imagenes/proyectos/flowee.webp",
   },
 ];
 ---
