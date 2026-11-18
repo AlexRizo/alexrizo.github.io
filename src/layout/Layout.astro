@@ -31,6 +31,23 @@ import "@/styles/global.css";
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script is:inline>
+      // Animaciones de entrada: se activan antes del primer pintado para que
+      // el contenido no parpadee. Sin JS o sin IntersectionObserver todo se ve
+      // normal, y si el observer no arranca en 2.5 s se muestra todo igual.
+      (() => {
+        if (!("IntersectionObserver" in window)) return;
+        const root = document.documentElement;
+        const enable = () => {
+          root.classList.add("reveal-ready");
+          setTimeout(() => {
+            if (!root.dataset.revealActive) root.classList.remove("reveal-ready");
+          }, 2500);
+        };
+        enable();
+        document.addEventListener("astro:after-swap", enable);
+      })();
+    </script>
     <ClientRouter />
     <title>Alex Rizo Dev</title>
   </head>
@@ -45,5 +62,32 @@ import "@/styles/global.css";
       </div>
     </main>
     <Footer />
+    <script>
+      const TARGETS = "[data-reveal], [data-reveal-group] > *";
+
+      // Lo que entra a la vista en el mismo momento aparece escalonado
+      const setupReveal = () => {
+        const root = document.documentElement;
+        root.dataset.revealActive = "true";
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            let order = 0;
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              const el = entry.target as HTMLElement;
+              el.style.setProperty("--reveal-delay", String(order++));
+              el.classList.add("is-revealed");
+              observer.unobserve(el);
+            }
+          },
+          { rootMargin: "0px 0px -8% 0px", threshold: 0.1 },
+        );
+
+        document.querySelectorAll(TARGETS).forEach((el) => observer.observe(el));
+      };
+
+      document.addEventListener("astro:page-load", setupReveal);
+    </script>
   </body>
 </html>

@@ -42,11 +42,12 @@ const moreCount = MORE.reduce((total, group) => total + group.techs.length, 0);
   <Title><span>Tecnologías</span> <br />Modernas</Title>
 
   <h2
+    data-reveal
     class="text-orange-500 text-xs font-semibold uppercase tracking-wider text-center lg:text-left lg:px-4 mb-2 mt-5"
   >
     Mi stack principal
   </h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+  <div data-reveal-group class="grid grid-cols-1 sm:grid-cols-2 gap-2">
     {
       MAIN_STACK.map((tech) => (
         <Tech title={tech.title} description={tech.description}>
@@ -56,7 +57,7 @@ const moreCount = MORE.reduce((total, group) => total + group.techs.length, 0);
     }
   </div>
 
-  <details class="group mt-8">
+  <details data-reveal class="group mt-8">
     <summary
       class="mx-auto lg:mx-4 w-fit list-none [&::-webkit-details-marker]:hidden cursor-pointer flex items-center gap-2 rounded-md border border-neutral-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-orange-500"
     >
