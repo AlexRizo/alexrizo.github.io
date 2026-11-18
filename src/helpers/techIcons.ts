@@ -29,6 +29,8 @@ export const TECH_ICONS: Record<string, string> = {
   Railway: "railway",
   DigitalOcean: "digitalocean",
   Netlify: "netlify",
+  TrueNAS: "truenas",
+  Tailscale: "tailscale",
   GitHub: "github",
   "Claude API": "anthropic",
   "Claude Code": "claudecode",
