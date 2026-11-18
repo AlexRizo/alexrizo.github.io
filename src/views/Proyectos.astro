@@ -1,52 +1,81 @@
 ---
 import ProyectCard from "@/components/ProyectCard.astro";
 import Title from "@/components/Title.astro";
+
+const PROJECTS = [
+  {
+    title: "Native Home",
+    about:
+      "Empresa de renta de inmuebles vacacionales en Manzanillo, Colima.",
+    description:
+      "Ya tenían un prototipo de diseño y buscaban a alguien que lo hiciera realidad con código. Lo desarrollé de principio a fin y le sumé un panel de administración para que gestionen sus propiedades por su cuenta.",
+    image: "/imagenes/proyectos/nativehome.webp",
+    url: "https://nativehome.com.mx",
+  },
+  {
+    title: "Alowee Interactive",
+    about:
+      "Agencia de marketing digital enfocada en el desarrollo de soluciones digitales.",
+    description:
+      "La agencia necesitaba renovar su sitio web. Su equipo creativo propuso el diseño y yo me encargué de llevarlo a código desde cero.",
+    image: "/imagenes/proyectos/alowee.webp",
+    url: "https://alowee.com",
+  },
+  {
+    title: "Not Alias",
+    about:
+      "Estudio creativo boutique especializado en branding y experiencia de marca.",
+    description:
+      "Partí de su prototipo y lo convertí en un sitio real con Astro, cuidando que fuera rápido y que la interfaz se sintiera tan atractiva como el diseño original.",
+    image: "/imagenes/proyectos/not-alias.webp",
+    url: "https://notalias.com",
+  },
+  {
+    title: "Meteoro",
+    about: "Venture studio que crea y potencia negocios.",
+    description:
+      "Necesitaban un espacio para dar a conocer sus servicios y proyectos. Construí una interfaz moderna, atractiva y optimizada para SEO.",
+    image: "/imagenes/proyectos/meteoro.webp",
+    url: "https://meteoroventures.com",
+  },
+  {
+    title: "Camina Conmigo",
+    about: "La Biblia católica a la luz del Año Litúrgico.",
+    description:
+      "Un proyecto que busca acercar al lector a la Palabra de Dios de forma más cercana y reflexiva, centrado en la liturgia del día. Lo construí con Astro e incluye un panel administrativo conectado a Turso.",
+    image: "/imagenes/proyectos/camina-conmigo.webp",
+    url: "https://caminaconmigo.org",
+  },
+  {
+    title: "Ezlabon",
+    about: "Servicios integrales de logística y transporte de carga federal.",
+    description:
+      "Buscaban dar a conocer sus servicios y capacidades. Desarrollé un sitio moderno, rápido y optimizado para SEO.",
+    image: "/imagenes/proyectos/ezlabon.webp",
+    url: "https://ezlabon.mx",
+  },
+  {
+    title: "Dr. Eric Beas",
+    about:
+      "Cirujano urólogo en Colima, especialista en endourología, laparoscopía y cirugía robótica.",
+    description:
+      "Su sitio presenta sus especialidades, los padecimientos que atiende y sus consultorios. Lo desarrollé en WordPress para que él mismo pueda administrar el contenido.",
+    image: "/imagenes/proyectos/eric-beas-urologo.webp",
+    url: "https://eric-beas.urologo-en-colima.com",
+  },
+  {
+    title: "Flowee",
+    about: "SaaS para la gestión diaria de tareas en equipo.",
+    description:
+      "El reto era organizar y agilizar el seguimiento de tareas entre los clientes y el equipo interno. Implementé un sistema de tareas con roles, notificaciones y panel administrativo, con dos interfaces: una para clientes y otra para el equipo.",
+    image: "/imagenes/proyectos/flowee.webp",
+  },
+];
 ---
 
 <section id="proyectos">
   <Title><span>Proyectos</span> <br />recientes</Title>
   <div role="grid" class="grid grid-cols-1 gap-4 mt-5">
-    <ProyectCard
-      title="Alowee Interactive"
-      description="Estudio interactivo que ofrece todo tipo de servicios digitales. (actualmente en remodelación)"
-      image="/imagenes/proyectos/alowee.webp"
-      url="https://alowee-v3.netlify.app"
-    />
-    <ProyectCard
-      title="Not Alias_"
-      description="Sitio web para una agencia de marketing digital que rompe con lo convencional. (actualmente en remodelación)"
-      image="/imagenes/proyectos/notalias_.webp"
-      url="https://notalias.com"
-    />
-    <ProyectCard
-      title="Ezlabon.mx"
-      description="Plataforma web para optimizar la operación logística de una transportista de carga federal."
-      image="/imagenes/proyectos/ezlabon.webp"
-      url="https://ezlabon.mx"
-    />
-    <ProyectCard
-      title="Printa"
-      description="Sitio web para una imprenta digital, pensado para simplificar cotizaciones y pedidos online"
-      image="/imagenes/proyectos/printa.webp"
-      url="https://printafast.com"
-    />
-    <ProyectCard
-      title="Eric Beas - Urólogo"
-      description="Landing page para un urólogo, diseñado para transmitir confianza y profesionalismo."
-      image="/imagenes/proyectos/eric-beas-urologo.webp"
-      url="https://eric-beas.urologo-en-colima.com"
-    />
-    <ProyectCard
-      title="Meteoro"
-      description="Sitio web para un venture studio, diseñado para transmitir innovación y escalabilidad."
-      image="/imagenes/proyectos/meteoro.webp"
-      url="https://meteoroventures.com"
-    />
-    <ProyectCard
-      title="Camina Conmigo"
-      description="Sitio web para una organización religiosa, enfocado en la evangelización."
-      image="/imagenes/proyectos/camina-conmigo.webp"
-      url="https://caminaconmigo.org"
-    />
+    {PROJECTS.map((project) => <ProyectCard {...project} />)}
   </div>
 </section>

@@ -11,7 +11,7 @@ import "@/styles/global.css";
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,7 +34,7 @@ import "@/styles/global.css";
     <ClientRouter />
     <title>Alex Rizo Dev</title>
   </head>
-  <body transition:name="slide">
+  <body transition:animate="slide">
     <Header />
     <main
       class="container mx-auto relative flex flex-col lg:flex-row justify-center gap-20 px-4 lg:px-0"

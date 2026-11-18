@@ -8,6 +8,6 @@ const { years, description } = Astro.props;
 ---
 
 <div role="contentinfo">
-  <h1 class="text-white font-semibold text-5xl lg:text-6xl xl:text-7xl">+{years}</h1>
-  <p class="max-w-30 leading-tight uppercase text-center lg:text-left">{description}</p>
+  <h1 class="text-white font-semibold text-4xl min-[380px]:text-5xl lg:text-6xl xl:text-7xl">+{years}</h1>
+  <p class="max-w-30 text-sm min-[380px]:text-base leading-tight uppercase text-center lg:text-left">{description}</p>
 </div>

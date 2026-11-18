@@ -3,36 +3,60 @@ import { MoveUpRight } from "@lucide/astro";
 
 interface Props {
   title: string;
+  about: string;
   description: string;
   image: string;
-  url: string;
+  url?: string;
 }
 
-const { title, description, image, url } = Astro.props;
+const { title, about, description, image, url } = Astro.props;
+
+const Wrapper = url ? "a" : "div";
+const linkProps = url
+  ? { href: url, target: "_blank", rel: "noopener noreferrer" }
+  : {};
 ---
 
 <div
   role="group"
   class="group hover:bg-white/3 transition-colors duration-300 rounded-xl p-5 border border-neutral-800 lg:border-0"
 >
-  <a
-    href={url}
-    target="_blank"
-    rel="noopener noreferrer"
-    class="flex flex-row gap-4 lg:gap-5"
-  >
-    <picture class="my-auto w-40">
-      <img src={image} alt={title} class="size-full rounded" />
+  <Wrapper {...linkProps} class="flex flex-col sm:flex-row gap-4 lg:gap-5">
+    <picture class="shrink-0 w-full sm:w-40">
+      <img
+        src={image}
+        alt={`Sitio web de ${title}`}
+        loading="lazy"
+        decoding="async"
+        class="w-full aspect-video object-cover object-top rounded"
+      />
     </picture>
     <article class="w-full">
-      <h1 class="text-white text-xl lg:text-2xl xl:text-3xl font-semibold">
-        {title}
-      </h1>
-      <p class="text-sm lg:text-base">{description}</p>
+      <div class="flex items-center gap-3 flex-wrap">
+        <h1 class="text-white text-xl lg:text-2xl xl:text-3xl font-semibold">
+          {title}
+        </h1>
+        {
+          !url && (
+            <span class="text-xs uppercase tracking-wider rounded-md bg-white/5 px-2 py-0.5">
+              Proyecto privado
+            </span>
+          )
+        }
+      </div>
+      <p class="text-sm lg:text-base text-neutral-400">{about}</p>
+      <h2 class="text-orange-500 text-xs font-semibold uppercase tracking-wider mt-4 mb-1">
+        Lo que hice
+      </h2>
+      <p class="text-sm leading-relaxed">{description}</p>
     </article>
-    <MoveUpRight
-      size={20}
-      class="text-orange-500 ml-auto mt-2 mr-2 group-hover:transform-[translate(10px,-10px)] transition-transform duration-300 ease-in-out"
-    />
-  </a>
+    {
+      url && (
+        <MoveUpRight
+          size={20}
+          class="hidden sm:block shrink-0 text-orange-500 ml-auto mt-2 mr-2 group-hover:transform-[translate(10px,-10px)] transition-transform duration-300 ease-in-out"
+        />
+      )
+    }
+  </Wrapper>
 </div>

@@ -10,10 +10,15 @@ interface Props {
 const { link, label, icon: Icon } = Astro.props;
 ---
 
-<button class="relative flex items-center justify-center cursor-pointer group">
-  <a href={link}><Icon size={20} /></a>
+<a
+  href={link}
+  aria-label={label}
+  class="relative flex items-center justify-center cursor-pointer group"
+>
+  <Icon size={20} />
   <small
+    aria-hidden="true"
     class="absolute top-2 py-0.5 px-1 bg-neutral-800 opacity-0 rounded-md transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-7.5"
     >{label}</small
   >
-</button>
+</a>

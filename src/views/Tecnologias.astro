@@ -2,52 +2,77 @@
 import Title from "@/components/Title.astro";
 import Tech from "@/components/Tech.astro";
 import { Icon } from "astro-icon/components";
+
+const CATEGORIES = [
+  {
+    name: "Frontend",
+    techs: [
+      { title: "TypeScript", description: "Lenguaje de programación", icon: "typescript", color: "text-blue-600" },
+      { title: "JavaScript", description: "Lenguaje de programación", icon: "javascript", color: "text-yellow-400" },
+      { title: "ReactJS", description: "Librería de UI", icon: "react", color: "text-cyan-500" },
+      { title: "Next.js", description: "Framework de React", icon: "nextdotjs", color: "text-black" },
+      { title: "Astro", description: "Framework frontend", icon: "astro", color: "text-orange-500" },
+      { title: "Tanstack", description: "Librerías de React", icon: "tanstack", color: "text-black" },
+      { title: "Tailwind", description: "Framework CSS", icon: "tailwindcss", color: "text-cyan-500" },
+      { title: "GSAP", description: "Animaciones", icon: "gsap", color: "text-green-500" },
+    ],
+  },
+  {
+    name: "Backend y bases de datos",
+    techs: [
+      { title: "NodeJS", description: "Entorno de ejecución", icon: "nodedotjs", color: "text-green-500" },
+      { title: "NestJS", description: "Framework backend", icon: "nestjs", color: "text-red-500" },
+      { title: "Express", description: "Framework backend", icon: "express", color: "text-black" },
+      { title: "Prisma", description: "ORM", icon: "prisma", color: "text-black" },
+      { title: "PostgreSQL", description: "Base de datos", icon: "postgresql", color: "text-blue-500" },
+      { title: "MySQL", description: "Base de datos", icon: "mysql", color: "text-blue-700" },
+      { title: "MongoDB", description: "Base de datos", icon: "mongodb", color: "text-green-600" },
+      { title: "Turso", description: "Base de datos", icon: "turso", color: "text-teal-400" },
+    ],
+  },
+  {
+    name: "CMS y e-commerce",
+    techs: [
+      { title: "WordPress", description: "CMS", icon: "wordpress", color: "text-blue-500" },
+      { title: "Elementor", description: "Constructor web", icon: "elementor", color: "text-rose-700" },
+      { title: "Shopify", description: "E-commerce", icon: "shopify", color: "text-lime-500" },
+      { title: "Strapi", description: "Headless CMS", icon: "strapi", color: "text-indigo-700" },
+    ],
+  },
+  {
+    name: "DevOps, automatización y herramientas",
+    techs: [
+      { title: "Docker", description: "Contenedores", icon: "docker", color: "text-blue-500" },
+      { title: "DigitalOcean", description: "Cloud", icon: "digitalocean", color: "text-blue-500" },
+      { title: "Netlify", description: "Hosting y despliegue", icon: "netlify", color: "text-teal-500" },
+      { title: "GitHub", description: "Control de versiones", icon: "github", color: "text-black" },
+      { title: "n8n", description: "Automatización", icon: "n8n", color: "text-rose-500" },
+      { title: "Zapier", description: "Automatización", icon: "zapier", color: "text-orange-600" },
+      { title: "Figma", description: "Diseño y prototipos", icon: "figma", color: "text-orange-600" },
+      { title: "Claude Code", description: "Desarrollo asistido por IA", icon: "claudecode", color: "text-[#d97757]" },
+    ],
+  },
+];
 ---
 
 <section id="tecnologias">
   <Title><span>Tecnologías</span> <br />Modernas</Title>
-  <div class="grid grid-cols-2 gap-2 mt-5">
-    <Tech title="TypeScript" description="Lenguaje">
-      <Icon name="typescript" size={36} class="text-blue-500" />
-    </Tech>
-    <Tech title="NodeJS" description="Tecnología backend">
-      <Icon name="nodedotjs" size={36} class="text-green-500" />
-    </Tech>
-    <Tech title="ReactJS" description="Framework frontend">
-      <Icon name="react" size={36} class="text-cyan-500" />
-    </Tech>
-    <Tech title="Tanstack" description="Librería de React">
-      <Icon name="tanstack" size={36} class="text-black" />
-    </Tech>
-    <Tech title="Tailwind" description="Framework CSS">
-      <Icon name="tailwindcss" size={36} class="text-cyan-500" />
-    </Tech>
-    <Tech title="Astro" description="Framework frontend">
-      <Icon name="astro" size={36} class="text-orange-500" />
-    </Tech>
-    <Tech title="NestJS" description="Framework backend">
-      <Icon name="nestjs" size={36} class="text-red-500" />
-    </Tech>
-    <Tech title="Express" description="Framework backend">
-      <Icon name="express" size={36} class="text-black" />
-    </Tech>
-    <Tech title="Prisma" description="ORM">
-      <Icon name="prisma" size={36} class="text-black" />
-    </Tech>
-    <Tech title="PostgreSQL" description="Base de datos">
-      <Icon name="postgresql" size={36} class="text-blue-500" />
-    </Tech>
-    <Tech title="MongoDB" description="Base de datos">
-      <Icon name="mongodb" size={36} class="text-green-600" />
-    </Tech>
-    <Tech title="MySQL" description="Base de datos">
-      <Icon name="mysql" size={36} class="text-orange-600" />
-    </Tech>
-    <Tech title="Docker" description="DevOps">
-      <Icon name="docker" size={36} class="text-blue-500" />
-    </Tech>
-    <Tech title="GitHub" description="Control de versiones">
-      <Icon name="github" size={36} class="text-black" />
-    </Tech>
+  <div class="space-y-10 mt-5">
+    {
+      CATEGORIES.map((category) => (
+        <div>
+          <h2 class="text-orange-500 text-xs font-semibold uppercase tracking-wider text-center lg:text-left lg:px-4 mb-2">
+            {category.name}
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {category.techs.map((tech) => (
+              <Tech title={tech.title} description={tech.description}>
+                <Icon name={tech.icon} size={36} class={tech.color} />
+              </Tech>
+            ))}
+          </div>
+        </div>
+      ))
+    }
   </div>
 </section>

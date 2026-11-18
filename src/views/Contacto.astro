@@ -10,9 +10,9 @@ import Title from "@/components/Title.astro";
   </Title>
   <div>
     <p class="max-w-xl">
-      Si tienes una idea en mente, un proyecto en mente, quieres que me una a tu
-      equipo o simplemente quieres charlar sobre tecnología, no dudes en
-      contactarme. Estoy seguro de que podemos crear algo increíble juntos.
+      ¿Buscas a alguien para tu equipo, tienes un proyecto en puerta o
+      simplemente quieres charlar sobre tecnología? Escríbeme, me encantará
+      saber qué tienes en mente y ver cómo puedo ayudarte.
     </p>
     <form
       class="mt-10 flex flex-col gap-6"
@@ -21,7 +21,7 @@ import Title from "@/components/Title.astro";
       method="POST"
       action="https://formsubmit.co/alex@rizcode.dev"
     >
-      <div class="grid grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <FormItem label="Nombre" id="name">
           <input
             type="text"
@@ -46,7 +46,7 @@ import Title from "@/components/Title.astro";
           name="budget"
           id="budget"
           required
-          class="[&>option]:text-black text-neutral-500 invalid:text-neutral-500"
+          class="[&>option]:text-black invalid:text-neutral-500"
         >
           <option value="" selected disabled
             >Selecciona un presupuesto...</option
